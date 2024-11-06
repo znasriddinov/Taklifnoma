@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taklifnoma</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <audio autoplay>
+        <source src="./assets/music/Shoxruxchilparchin.mp3" type="audio/mp3">
+    </audio>
+
+    <section>
+        <div class="back">
+            <div class="container">
+                <h1>Хурматли азиз мехмонимиз!</h1>
+                <p>
+                    Сизни 2024 йил 30 сентябрь, Душанба куни
+                    бўладиган фарзандларимизнинг "Никоҳ"
+                    тўйлари муносабати билан ёзиладиган
+                    нонушта дастурхонига таклиф қиламиз.
+                    <span>
+                        Ҳурмат ва эҳтром ила
+                    </span>
+                </p>
+                <h4>Сотволди хожи дада ўғиллари Нуруллох</h4>
+                <p>Манзил: Қўштепа тумани Файз МФЙ Ойдинкўл кўча
+                    Мўлжал: 19-мактаб олдида. Ўроқболға йўналиши.</p>
+                <a target="_blank"
+                    href="https://www.google.com/maps/place/40.529069,71.682282/data=!4m6!3m5!1s0!7e2!8m2!3d40.529069!4d71.682282?utm_source=mstt_1&entry=gps&coh=192189&g_ep=CAESCjExLjE0Ni4yMTEYACDl7Q0qbCw5NDIyMzI5OSw5NDIxNjQxMyw5NDIxMjQ5Niw5NDIwNzM5NCw5NDIwNzUwNiw5NDIwODUwNiw5NDIxNzUyMyw5NDIxODY1Myw5NDIyOTgzOSw0NzA4NzExOCw0NzA4NDM5Myw5NDIxMzIwMEICVVo%3D">
+                    <button class="btn">
+                        Карта орқали очиш
+                    </button>
+                </a>
+                <div class="timer-container">
+                    <div class="timer" id="timer"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const deadline = new Date("November 07, 2024 20:14:00").getTime();
+
+        // Update the countdown every 1 second
+        const countdownInterval = setInterval(function () {
+            // Get the current time
+            const now = new Date().getTime();
+
+            // Calculate the time remaining
+            const timeLeft = deadline - now;
+
+            // Calculate days, hours, minutes, and seconds left
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            // Display the result
+            document.getElementById("timer").innerHTML =
+                days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+            // If the countdown is over, display a message
+            if (timeLeft <= 0) {
+                clearInterval(countdownInterval); // Stop the countdown
+                document.getElementById("timer").innerHTML = "To'y boshlandi!";
+            }
+        }, 1000);
+    </script>
+</body>
+
+</html>
